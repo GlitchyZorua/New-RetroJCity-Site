@@ -1,16 +1,17 @@
 <link rel="stylesheet" type="text/css" href="css.css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta charset="utf-8" />
-
 <title>RetroJCity</title>
- <center><div align="right" nowrap style="padding-bottom:4px" width="100%">
+ <center>
+  <div align="right" nowrap style="padding-bottom:4px" width="100%">
   <font size="-1">
   <a href="https://neocities.org/dashboard">Personalize this page</a>&nbsp;|&nbsp;
-  <a href="https://neocities.org/signin">Sign in</a></font></div><img alt="Google" height="110" src="logo.gif" width="400">
+  <a href="https://neocities.org/signin">Sign in</a></font></div><img alt="Sign In" height="110" src="logo.gif" width="400">
   <br>
   <br>
   <!-- <form action="/web//http://www.google.com/search" name="url">-->
-  <script defer><!--
+  <script defer>
+  //<!--
 function togDisp(e){stopB(e);var elems=document.getElementsByName('more');for(var i=0;i<elems.length;i++){var obj=elems[i],dp="";if(obj.style.display==""){dp="none";}obj.style.display=dp;}return false;}
 function stopB(e){if(!e)e=window.event;e.cancelBubble=true;}
 document.onclick=function(event){var elems=document.getElementsByName('more');if(elems[0].style.display==""){togDisp(event);}}
@@ -27,11 +28,16 @@ document.onclick=function(event){var elems=document.getElementsByName('more');if
   &nbsp;&nbsp;&nbsp;&nbsp;<b><a href="javascript:alert('soon.')" class="q" onclick="this.blur();return togDisp(event)">more&nbsp;&raquo;</a></b>
   <span name="more" id="more" style="display:none;position:absolute;background:#000;border:1px solid #369;margin:-.5ex 2ex;padding:0 0 .5ex .8ex;width:16ex;line-height:1.9;z-index:1000" onclick="stopB(event)">
     <a href="#" onclick="return togDisp(event)"><img border="0" src="x2.gif" width="12" height="12" alt="Close menu" align="right" hspace="4" vspace="4"></a>
-    <a class="q" href="https://write.as/">Blogs</a><br>
+    <a class="q" href="https://write.as/">Make Blogs</a><br>
+    <a class="q" href="blogs.html">My Blogs</a><br>
+    <a class="q" href="microblogs.html">My Micro-Blogs</a><br>
+    <a class="q" href="games.html">Games</a><br>
+    <a class="q" href="achive.html">Archive</a><br>
     <a class="q" href="https://z-lib.is/">Books</a><br>
     <a class="q" href="javascript:alert('stop trying to access dead google products')">Froogle</a><br>
     <a class="q" href="javascript:alert('no.')">Groups</a><br>
     <a class="q" href="https://en.wikipedia.org/wiki/Criticism_of_patents?useskin=vector">Patents</a><br>
+    
     <a href="javascript:alert('nothing yet.')" class="q"><b>even more &raquo;</b></a></span></font></td></tr></table>
     <table cellpadding="0" cellspacing="0"><tr valign="top"><td width="25%">&nbsp;</td><td align="center" nowrap><input name="hl" type="hidden" value="en"><input type="hidden" name="ie" value="ISO-8859-1"><input autofocus placeholder="Search..." type="text" id="url" size="55"><br>
     <input name="gowww" type="submit" value="StartPage Search">
@@ -41,8 +47,43 @@ document.onclick=function(event){var elems=document.getElementsByName('more');if
       <br>&nbsp;&nbsp;<a href="https://www.startpage.com/do/settings?query&lui=english">Preferences</a>
       <br>&nbsp;&nbsp;<a href="javascript:alert('we only speak english. you can speak english, right?')">Language Tools</a></font></td></tr></table></form><br><table><tr><td valign="center">
         <img src="hpp-cart-glitch.gif" alt="" width="40" height="22"></td><td valign="center"><font size="-1">RetroJCity is non-profit. we don't make money from hosting this site on Neocities. <br><a href="">You can join the Discord Server, if you wish!</a> <b>I don't accept donations as of right now.</b> </font></td></tr></table>
-        <script>
- document.addEventListener("DOMContentLoaded", function() {
+        <br><br>
+        <style>
+        @font-face {
+           font-family: "clockfont";
+           src: url("alarm_clock.ttf");
+        }
+
+
+      .clock {
+        font-family: clockfont;
+          font-size: 40px;
+        }
+        </style>
+       <body onload="startTime()">
+        <div id="clockfont">
+          <div id="clock" class="clock"></div>
+        </div>
+      </body>
+      
+<script>
+  function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  let ampm = h >= 12 ? 'PM' : 'AM';
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s+" "+ampm;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+document.addEventListener("DOMContentLoaded", function() {
     var url = document.getElementById('url');
     var gowww = document.getElementsByName('gowww')[0];
     var gonc = document.getElementsByName('gonc')[0];
@@ -63,26 +104,35 @@ document.onclick=function(event){var elems=document.getElementsByName('more');if
     function searchluck() {
       if (url.value === "the cake is a lie") {
         window.location.replace('https://www.youtube.com/watch?v=JAw3V8ScLeI');
+        return;
       }
       if (url.value === "fandom") {
         window.location.replace('https://www.youtube.com/watch?v=qcfuA_UAz3I');
+        return;
       }
       if (url.value === "orgin") {
         window.location.replace('https://windows93.net');
+        return;
       }
       if (url.value === "list") {
         window.location.replace('https://github.com/GlitchyZorua/GlitchyZorua.github.io/blob/main/projects/random/neocities/random.html');
+        return;
       }
       if (url.value === "ding"){
-        alert('fries are ready.')
+        alert('fries are ready.');
+        return;
       }
       if (url.value == "computer"){
         window.location.replace('https://www.youtube.com/watch?v=aAtF-Zzdnc8')
+        return;
       }
       if (url.value == "surprise"){
         window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+        return;
       }
-      if (url.value)
+      if (url.value == "sdjlkfgjfsdlkgfdjglfkdjgfdlkg") {
+        alert('you\'ve looked in the code. congrats.')
+      }
         window.location.replace("https://GlitchyZorua.github.io/projects/random/neocities/random.html");
     }
 
