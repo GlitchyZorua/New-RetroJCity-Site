@@ -1,3 +1,7 @@
+# archived
+
+this has been merged with my website, so it has been archived.
+
 # New-RetroJCity-Site
 
 The new Website for retrojcity is coming very soon.
